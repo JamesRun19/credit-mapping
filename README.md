@@ -36,3 +36,34 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Installing/configuring the Project locally
+
+The following Python Libraries must be installed before running the app:
+
+```bash
+pip install Flask flask_cors PyPDF2 sentence-transformers nltk
+```
+
+The database must be running on a server and configured in the /src/lib/db.ts file:
+
+```bash
+import postgres from 'postgres';
+export const sql = postgres({
+    host: 'localhost',
+    database: 'creditmap_db',
+    port: 5432
+});
+```
+
+To run the app, type in the terminal:
+```bash
+npm run dev
+```
+
+Once running, we must start the flask server:
+Run the file - backend/app.py
+
+The application should now be running on: http://localhost:5173/
+
+
